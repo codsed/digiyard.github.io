@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-Code Platform Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pastel-blue: #d0e8f2;
+            --pastel-pink: #f9e7e7;
+            --pastel-green: #e6f5e6;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background-color: #f8fafc;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pastel-blue), var(--pastel-pink));
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--pastel-green);
+            padding-left: 1rem;
+        }
+
+        .bento-box {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius);
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-top: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        tr:nth-child(odd) {
+            background-color: var(--pastel-blue);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--pastel-pink);
+        }
+
+        .additional-table tr:nth-child(odd) {
+            background-color: var(--pastel-green);
+        }
+
+        .additional-table tr:nth-child(even) {
+            background-color: var(--pastel-blue);
+        }
+
+        .technical-table tr:nth-child(odd) {
+            background-color: var(--pastel-pink);
+        }
+
+        .technical-table tr:nth-child(even) {
+            background-color: var(--pastel-green);
+        }
+
+        tr:hover {
+            background-color: rgba(209, 213, 219, 0.3);
+        }
+
+        .small-screen-message {
+            display: none;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            margin-top: 40vh;
+            transform: translateY(-50%);
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                display: none;
+            }
+
+            .small-screen-message {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="small-screen-message">
+        Please expand your screen width to view contents.
+    </div>
+
+    <div class="container">
+        <h1>No-Code Platform Comparison</h1>
+
+        <div class="bento-box">
+            <h2>Popular No-Code Website Builders: Comparison</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Strengths</th>
+                            <th>Weaknesses</th>
+                            <th>Complexity Level</th>
+                            <th>Notable Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wix</strong></td>
+                            <td>• Intuitive drag-and-drop editor<br>• 800+ templates<br>• Built-in SEO tools<br>• App market with 300+ integrations<br>• Advanced design freedom</td>
+                            <td>• Can be slow with complex sites<br>• Limited code customization<br>• Not easy to migrate away from<br>• Templates can be hard to switch between</td>
+                            <td>Medium to High</td>
+                            <td>• AI site generator<br>• Wix ADI (Artificial Design Intelligence)<br>• Advanced e-commerce capabilities<br>• Custom animations<br>• Mobile editor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WordPress</strong></td>
+                            <td>• Extremely flexible and scalable<br>• Huge plugin ecosystem (50,000+)<br>• SEO-friendly<br>• Great for blogs and content sites<br>• Large community support</td>
+                            <td>• Steeper learning curve<br>• Requires maintenance and updates<br>• Security concerns if not maintained<br>• Performance can suffer with too many plugins</td>
+                            <td>Medium to Very High</td>
+                            <td>• Content management system<br>• Custom post types<br>• WooCommerce integration<br>• Multilingual support<br>• Advanced user management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Softr</strong></td>
+                            <td>• Airtable/Google Sheets integration<br>• Quick setup for data-driven sites<br>• Clean, professional templates<br>• Membership and portal functionality<br>• Good for MVPs</td>
+                            <td>• Limited design customization<br>• Dependent on external databases<br>• Fewer templates than competitors<br>• Less established marketplace</td>
+                            <td>Low to Medium</td>
+                            <td>• User authentication<br>• Directory websites<br>• Client portals<br>• Marketplace creation<br>• Forms and payments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Webflow</strong></td>
+                            <td>• Professional-grade design capabilities<br>• Clean code output<br>• CMS for dynamic content<br>• Advanced animations<br>• Export code option</td>
+                            <td>• Steeper learning curve<br>• More expensive for complex sites<br>• Can be overwhelming for beginners<br>• Limited built-in functionality</td>
+                            <td>Medium to Very High</td>
+                            <td>• CSS Grid and Flexbox support<br>• Interactions and animations<br>• CMS collections<br>• E-commerce functionality<br>• Advanced SEO tools</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bubble</strong></td>
+                            <td>• Full web application development<br>• Complex workflows and logic<br>• Database functionality<br>• API integrations<br>• User authentication</td>
+                            <td>• Performance issues with complex apps<br>• Steeper learning curve<br>• More technical than true "no-code"<br>• Can be expensive at scale</td>
+                            <td>High to Very High</td>
+                            <td>• Database and data management<br>• Conditional logic<br>• API connector<br>• Plugin marketplace<br>• Responsive design</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Framer</strong></td>
+                            <td>• Design-focused approach<br>• Interactive prototyping<br>• Component-based system<br>• Clean, modern templates<br>• Code export options</td>
+                            <td>• Less established for production sites<br>• Limited e-commerce capabilities<br>• Fewer integrations than competitors<br>• Better for prototypes than full websites</td>
+                            <td>Medium</td>
+                            <td>• Advanced animations<br>• Interactive components<br>• Design system support<br>• React components<br>• Prototype to production workflow</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bento-box">
+            <h2>Additional Considerations</h2>
+            <div style="overflow-x: auto;">
+                <table class="additional-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Best Options</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>E-commerce</strong></td>
+                            <td>Wix, WordPress (WooCommerce), Webflow</td>
+                            <td>WordPress with WooCommerce offers the most scalable and customizable solution, while Wix provides the easiest entry point</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blogs/Content</strong></td>
+                            <td>WordPress, Webflow</td>
+                            <td>WordPress is the industry standard for content-heavy sites</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Web Applications</strong></td>
+                            <td>Bubble, Softr</td>
+                            <td>Bubble can build complex applications with user authentication and database functionality</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Design Freedom</strong></td>
+                            <td>Webflow, Framer, Wix</td>
+                            <td>Webflow offers the most professional design capabilities with clean code output</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Learning Curve</strong></td>
+                            <td>Wix, Softr</td>
+                            <td>Wix's drag-and-drop interface and Softr's template-based approach are the most beginner-friendly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalability</strong></td>
+                            <td>WordPress, Bubble, Webflow</td>
+                            <td>WordPress can scale to enterprise level with proper development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Speed to Launch</strong></td>
+                            <td>Softr, Wix</td>
+                            <td>Softr's templates and database connections allow very quick deployment</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bento-box">
+            <h2>Technical, Production, and Development Considerations</h2>
+            <div style="overflow-x: auto;">
+                <table class="technical-table">
+                    <thead>
+                        <tr>
+                            <th>Consideration</th>
+                            <th>Wix</th>
+                            <th>WordPress</th>
+                            <th>Softr</th>
+                            <th>Webflow</th>
+                            <th>Bubble</th>
+                            <th>Framer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hosting Infrastructure</strong></td>
+                            <td>Fully managed cloud hosting</td>
+                            <td>Self-hosted or managed options</td>
+                            <td>Fully managed cloud hosting</td>
+                            <td>Fully managed cloud hosting</td>
+                            <td>Fully managed cloud hosting</td>
+                            <td>Fully managed cloud hosting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Load Speed & Performance</strong></td>
+                            <td>Moderate (can slow with complex sites)</td>
+                            <td>Varies based on hosting and optimization</td>
+                            <td>Fast for simple sites</td>
+                            <td>Generally good</td>
+                            <td>Can be slow with complex apps</td>
+                            <td>Good for simpler sites</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Server Uptime SLA</strong></td>
+                            <td>99.9%</td>
+                            <td>Depends on hosting provider</td>
+                            <td>99.9%</td>
+                            <td>99.9% uptime guarantee</td>
+                            <td>99.95% on business plans</td>
+                            <td>No specific SLA published</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Version Control</strong></td>
+                            <td>Limited (auto-save only)</td>
+                            <td>Full with plugins or Git integration</td>
+                            <td>None</td>
+                            <td>Basic versioning system</td>
+                            <td>Basic version history</td>
+                            <td>Basic version history</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Database Capabilities</strong></td>
+                            <td>Limited database structure</td>
+                            <td>Full MySQL/MariaDB support</td>
+                            <td>Relies on Airtable/Google Sheets</td>
+                            <td>CMS collections with relationships</td>
+                            <td>Robust database with complex relations</td>
+                            <td>Limited database options</td>
+                        </tr>
+                        <tr>
+                            <td><strong>API Access</strong></td>
+                            <td>REST API available</td>
+                            <td>Full REST API</td>
+                            <td>Limited API access</td>
+                            <td>REST API for CMS</td>
+                            <td>Both consumption and creation of APIs</td>
+                            <td>Limited API capabilities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Code Integration</strong></td>
+                            <td>Limited JavaScript/HTML/CSS</td>
+                            <td>Full code access</td>
+                            <td>Limited custom code</td>
+                            <td>Full code customization</td>
+                            <td>JavaScript plugins</td>
+                            <td>React components</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Export/Migration Options</strong></td>
+                            <td>Very limited</td>
+                            <td>Full database and file export</td>
+                            <td>Limited to data only</td>
+                            <td>HTML/CSS export available</td>
+                            <td>Limited export options</td>
+                            <td>Code export for components</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CDN Implementation</strong></td>
+                            <td>Included</td>
+                            <td>Via plugins or hosting</td>
+                            <td>Included</td>
+                            <td>Included globally</td>
+                            <td>Included</td>
+                            <td>Included</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SSL Certificates</strong></td>
+                            <td>Free SSL included</td>
+                            <td>Depends on hosting</td>
+                            <td>Free SSL included</td>
+                            <td>Free SSL included</td>
+                            <td>Free SSL included</td>
+                            <td>Free SSL included</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Backup Systems</strong></td>
+                            <td>Auto backups</td>
+                            <td>Manual or plugin-based</td>
+                            <td>Limited backup options</td>
+                            <td>Site versioning</td>
+                            <td>Daily backups on paid plans</td>
+                            <td>Limited backup functionality</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Development Environments</strong></td>
+                            <td>Single environment</td>
+                            <td>Staging available with some hosts</td>
+                            <td>No formal staging</td>
+                            <td>Development/staging environments</td>
+                            <td>Development/production environments</td>
+                            <td>Preview environments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Collaboration</strong></td>
+                            <td>Basic team roles</td>
+                            <td>Advanced with plugins</td>
+                            <td>Basic team permissions</td>
+                            <td>Team accounts with permissions</td>
+                            <td>Team collaboration features</td>
+                            <td>Team sharing and editing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Plugin Ecosystem</strong></td>
+                            <td>300+ apps</td>
+                            <td>50,000+ plugins</td>
+                            <td>Limited marketplace</td>
+                            <td>Limited integrations</td>
+                            <td>Growing plugin marketplace</td>
+                            <td>Limited extensions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Domain Setup</strong></td>
+                            <td>Easy setup</td>
+                            <td>Easy setup</td>
+                            <td>Easy setup</td>
+                            <td>Easy setup</td>
+                            <td>Easy setup</td>
+                            <td>Easy setup</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SEO Capabilities</strong></td>
+                            <td>Built-in SEO tools</td>
+                            <td>Advanced with plugins</td>
+                            <td>Basic SEO settings</td>
+                            <td>Advanced SEO controls</td>
+                            <td>Basic SEO settings</td>
+                            <td>Basic SEO settings</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Responsiveness</strong></td>
+                            <td>Auto-responsive with editor</td>
+                            <td>Theme dependent</td>
+                            <td>Generally responsive</td>
+                            <td>Full responsive control</td>
+                            <td>Requires manual setup</td>
+                            <td>Auto-responsive with options</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Database Size Limits</strong></td>
+                            <td>20GB on business plans</td>
+                            <td>Hosting dependent</td>
+                            <td>Limited by Airtable/Sheets</td>
+                            <td>10,000 items per collection</td>
+                            <td>10GB on professional plan</td>
+                            <td>Limited CMS capability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Script Loading Optimization</strong></td>
+                            <td>Limited control</td>
+                            <td>Full control with caching plugins</td>
+                            <td>Automatic optimization</td>
+                            <td>Good optimization</td>
+                            <td>Limited optimization</td>
+                            <td>Automatic optimization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Third-party Integration</strong></td>
+                            <td>Via App Market</td>
+                            <td>Via plugins</td>
+                            <td>Limited integrations</td>
+                            <td>Via Zapier/native</td>
+                            <td>Native and Zapier</td>
+                            <td>Limited integrations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Compliance & Security</strong></td>
+                            <td>GDPR tools included</td>
+                            <td>Manual implementation</td>
+                            <td>Basic compliance tools</td>
+                            <td>GDPR tools available</td>
+                            <td>GDPR and SOC 2 compliant</td>
+                            <td>Basic compliance tools</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Authentication Methods</strong></td>
+                            <td>Email, social login</td>
+                            <td>Multiple via plugins</td>
+                            <td>Email, social login</td>
+                            <td>Limited options</td>
+                            <td>Multiple options</td>
+                            <td>Limited options</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalability Limits</strong></td>
+                            <td>~500K monthly visitors</td>
+                            <td>Millions with proper hosting</td>
+                            <td>~100K monthly visitors</td>
+                            <td>~1M monthly visitors</td>
+                            <td>Performance degrades at scale</td>
+                            <td>Not ideal for high-traffic</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Server-side Functions</strong></td>
+                            <td>Limited</td>
+                            <td>Full with PHP</td>
+                            <td>Very limited</td>
+                            <td>Limited</td>
+                            <td>Extensive workflow capability</td>
+                            <td>Very limited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deployment Process</strong></td>
+                            <td>One-click publish</td>
+                            <td>Manual or automated</td>
+                            <td>One-click publish</td>
+                            <td>One-click publish</td>
+                            <td>One-click publish</td>
+                            <td>One-click publish</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost at Scale</strong></td>
+                            <td>$29-$49/month</td>
+                            <td>$5-$200+/month depending on hosting</td>
+                            <td>$24-$165/month</td>
+                            <td>$16-$212+/month</td>
+                            <td>$29-$529+/month</td>
+                            <td>$15-$25/month</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
